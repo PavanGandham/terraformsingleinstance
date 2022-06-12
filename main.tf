@@ -15,7 +15,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "pavanterrformbucket"
+    bucket = "pavanterraformbucket"
     key    = "dev-statefiles/dev.tfstate"
     region = "us-east-1"
   }
