@@ -13,13 +13,13 @@ provider "aws" {
 #   }
 # }
 
-terraform {
-  backend "s3" {
-    bucket = "prodpavanterraform"
-    key    = "prod.tfstate"
-    region = "us-east-1"
-  }
-}
+# terraform {
+#   backend "s3" {
+#     bucket = "prodpavanterraform"
+#     key    = "prod.tfstate"
+#     region = "us-east-1"
+#   }
+# }
 
 resource "aws_vpc" "default" {
     cidr_block = "${var.vpc_cidr}"
