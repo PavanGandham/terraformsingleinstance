@@ -4,22 +4,22 @@ provider "aws" {
 }
 
 # terraform {
-#   required_version = "<= 0.14" #Forcing which version of Terraform needs to be used
+#   required_version = ">= 1.0.0" #Forcing which version of Terraform needs to be used
 #   required_providers {
 #     aws = {
-#       version = "<= 3.0.0" #Forcing which version of plugin needs to be used.
+#       version = ">~ 3.0.0" #Forcing which version of plugin needs to be used.
 #       source = "hashicorp/aws"
 #     }
 #   }
 # }
 
-# terraform {
-#   backend "s3" {
-#     bucket = "pavanterrformbucket"
-#     key    = "dev.tfstate"
-#     region = "us-east-1"
-#   }
-# }
+terraform {
+  backend "s3" {
+    bucket = "pavanterrformbucket"
+    key    = "dev.tfstate"
+    region = "us-east-1"
+  }
+}
 
 resource "aws_vpc" "default" {
     cidr_block = "${var.vpc_cidr}"
